@@ -5,6 +5,8 @@
  */
 package vista;
 
+import java.awt.Label;
+
 /**
  *
  * @author angel
@@ -12,6 +14,7 @@ package vista;
 public class VPrincipal extends javax.swing.JFrame {
     
     controlador.FachadaControlador fc;
+    private Label label1;
 
     /**
      * Creates new form VPrincipal
@@ -63,30 +66,37 @@ public class VPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
+    public void mostrarListaAmigos(){
+    
+        
+    }
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JTextField buscarUsuarios;
+    private javax.swing.JButton jButton_aceptarPeticionAmistad;
+    private javax.swing.JButton jButton_buscarUsuarios;
+    private javax.swing.JButton jButton_eliminarAmistad;
+    private javax.swing.JButton jButton_enviarPeticionAmistad;
+    private javax.swing.JButton jButton_iniciarChat;
+    private javax.swing.JButton jButton_rechazarPeticionAmistad;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
-    private javax.swing.JList<String> jList4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
     private java.awt.Label label2;
     private java.awt.Label label3;
+    private javax.swing.JList<String> listaAmigosConectados;
+    private javax.swing.JList<String> listaAmigosDelUsuario;
+    private javax.swing.JList<String> listaPeticionesPendientesDelUsuario;
+    private javax.swing.JLabel peticionesPendientes;
+    private javax.swing.JList<String> resultadoBusquedaUsuarios;
     // End of variables declaration//GEN-END:variables
 }
