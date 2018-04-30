@@ -37,12 +37,17 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="nombreDelAmigo" min="-2" max="-2" attributes="0"/>
+                              <Component id="myFriendsName" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="areaDeMensajesDeSalida" max="32767" attributes="0"/>
                               <Component id="jLabel7" min="-2" pref="868" max="-2" attributes="0"/>
                               <Component id="areaDeMensajesDelChat" min="-2" pref="868" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="myName" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -64,10 +69,15 @@
                       <Component id="jButton_irAVistaPrincipal" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="44" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="myName" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="10" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="nombreDelAmigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="myFriendsName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Component id="areaDeMensajesDelChat" min="-2" pref="237" max="-2" attributes="0"/>
@@ -107,9 +117,19 @@
         <Property name="text" type="java.lang.String" value="Estas chateando con:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="nombreDelAmigo">
+    <Component class="javax.swing.JLabel" name="myFriendsName">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nombre del usuario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Hola: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="myName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="yo"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -3,18 +3,37 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vista;
+package clientep2p;
 
 /**
  *
  * @author angel
  */
 public class VChat extends javax.swing.JFrame {
+    
+    public ClientInterface myClientInterface;
+    public String myUserID;
+    public ClientInterface othersClientInterface;
+    public String myFriendsUserID;
+    
+    
 
     /**
      * Creates new form VChat
      */
-    public VChat() {
+    public VChat(ClientInterface myClientInterface, String myUserID, ClientInterface othersClientInterface, String myFriendsUserID) {
+        initComponents();
+        this.setDefaultCloseOperation(VChat.DISPOSE_ON_CLOSE);
+        this.myClientInterface=myClientInterface;
+        this.myUserID= myUserID;
+        this.othersClientInterface=othersClientInterface;
+        this.myFriendsUserID=myFriendsUserID;
+        myName.setText(myUserID);
+        myFriendsName.setText(myFriendsUserID);
+        areaDeMensajesDelChat.setEditable(false);
+    }
+    
+    public VChat(){
         initComponents();
     }
 
@@ -33,7 +52,9 @@ public class VChat extends javax.swing.JFrame {
         jButton_enviarMensaje = new javax.swing.JButton();
         jButton_irAVistaPrincipal = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        nombreDelAmigo = new javax.swing.JLabel();
+        myFriendsName = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        myName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,7 +66,11 @@ public class VChat extends javax.swing.JFrame {
 
         jLabel1.setText("Estas chateando con:");
 
-        nombreDelAmigo.setText("Nombre del usuario");
+        myFriendsName.setText("Nombre del usuario");
+
+        jLabel2.setText("Hola: ");
+
+        myName.setText("yo");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -64,11 +89,15 @@ public class VChat extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(32, 32, 32)
-                                .addComponent(nombreDelAmigo))
+                                .addComponent(myFriendsName))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(areaDeMensajesDeSalida)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 868, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(areaDeMensajesDelChat, javax.swing.GroupLayout.PREFERRED_SIZE, 868, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(areaDeMensajesDelChat, javax.swing.GroupLayout.PREFERRED_SIZE, 868, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(myName)))))
                 .addContainerGap(264, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -81,10 +110,14 @@ public class VChat extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addComponent(jButton_irAVistaPrincipal)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(myName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(nombreDelAmigo))
+                    .addComponent(myFriendsName))
                 .addGap(43, 43, 43)
                 .addComponent(areaDeMensajesDelChat, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
@@ -97,6 +130,13 @@ public class VChat extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setTextChat(String texto){
+        areaDeMensajesDelChat.setText(texto);
+    }
+    public String getTextChat(){
+        return areaDeMensajesDelChat.getText();
+    }
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField areaDeMensajesDeSalida;
@@ -104,7 +144,9 @@ public class VChat extends javax.swing.JFrame {
     private javax.swing.JButton jButton_enviarMensaje;
     private javax.swing.JButton jButton_irAVistaPrincipal;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel nombreDelAmigo;
+    private javax.swing.JLabel myFriendsName;
+    private javax.swing.JLabel myName;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlador;
+package clientep2p;
 
 import java.rmi.*;
 import java.util.List;
 import java.util.Vector;
-import vista.Usuario;
+import clientep2p.Usuario;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,9 +19,13 @@ public interface ClientInterface extends Remote {
 
     public Vector<Usuario> getListOfFriendsConnected(String user) throws java.rmi.RemoteException;
 
+    public void friendConnected(ClientInterface friend, String user) throws java.rmi.RemoteException;
+    
     public void friendDisconnected(String user) throws java.rmi.RemoteException;
+    
+    public void addFriend(String friendName) throws java.rmi.RemoteException;
 
-    public void updateFriends(List<String> amigos)
+    public void updateFriendsList(ArrayList<String> amigos)
             throws java.rmi.RemoteException;
 
     public void friendRequest(String friendName)  throws java.rmi.RemoteException;
@@ -31,11 +36,8 @@ public interface ClientInterface extends Remote {
     public void startChat(ClientInterface friend, String friendName)
             throws java.rmi.RemoteException;
 
-    public List<String> getFriendList() throws java.rmi.RemoteException;
+    public ArrayList<String> getListOfFriends() throws java.rmi.RemoteException;
 
     public void receiveFile(String fileName, byte[] content, ClientInterface friend)
             throws java.rmi.RemoteException;
-
-    public void addFriend(String friendName) throws java.rmi.RemoteException;
-
 }
