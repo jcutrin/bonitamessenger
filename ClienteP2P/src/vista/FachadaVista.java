@@ -6,6 +6,7 @@
 package vista;
 
 import controlador.FachadaControlador;
+import java.rmi.RemoteException;
 
 /**
  *
@@ -16,7 +17,7 @@ public class FachadaVista {
     controlador.FachadaControlador fc;
     VPrincipal vp;
 
-    public FachadaVista(controlador.FachadaControlador fc) {
+    public FachadaVista(controlador.FachadaControlador fc) throws RemoteException {
         this.fc = fc;
         this.vp = new VPrincipal(fc);
     }

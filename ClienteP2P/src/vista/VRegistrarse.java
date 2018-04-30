@@ -5,6 +5,10 @@
  */
 package vista;
 
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author angel
@@ -156,17 +160,21 @@ public class VRegistrarse extends javax.swing.JDialog {
 
             if (btnAceptar.getLabel().equals("Aceptar")){
 
-                if(fc.checkUser(textoUsuario.getText()) == true){
-
-                    Usuario u = new Usuario(textoUsuario.getText(),textoClave.getText());
-
-                    fc.registrarUsuario(u); //Lanzamos la transaccion al registrar un nuevo usuario
-
-                    etiquetaExito.setVisible(true);
-                    btnAceptar.setLabel("Continuar");
-                }else{
-
-                    etiquetaFallo.setVisible(true);
+                try {
+                    
+                    if(fc.checkUser(textoUsuario.getText()) == true){
+                        
+                        fc.signUp(textoUsuario.getText(),textoClave.getText()); //Lanzamos la transaccion al registrar un nuevo usuario
+                        
+                        etiquetaExito.setVisible(true);
+                        btnAceptar.setLabel("Continuar");
+                    }else{
+                        
+                        etiquetaFallo.setVisible(true);
+                    }
+                    
+                } catch (RemoteException ex) {
+                    Logger.getLogger(VRegistrarse.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             }else if(btnAceptar.getLabel().equals("Continuar")){

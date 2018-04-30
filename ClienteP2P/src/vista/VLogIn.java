@@ -5,6 +5,10 @@
  */
 package vista;
 
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author angel
@@ -147,11 +151,18 @@ public class VLogIn extends javax.swing.JDialog {
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         etiquetaFallo.setVisible(false);
-        if (fc.checkUser(textoUsuario.getText()) == true){
-
-            this.dispose();
-        }else
-            etiquetaFallo.setVisible(true);
+        
+        try {
+            
+            if (fc.checkUser(textoUsuario.getText()) == true){
+                
+                this.dispose();
+            }else
+                etiquetaFallo.setVisible(true);
+        } catch (RemoteException ex) {
+            Logger.getLogger(VLogIn.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
